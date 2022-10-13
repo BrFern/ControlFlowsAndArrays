@@ -22,7 +22,7 @@ var num;
 */
 
 
-let numberGrade= 67;{
+let numberGrade;{
     if (numberGrade >= 90) {
         console.log ("You got an A.");
     } else if (numberGrade >= 80) {
