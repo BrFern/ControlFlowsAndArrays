@@ -68,29 +68,86 @@
 //     return newPlayer;
 //   }
 
-class Character {
-    //constructor
-    constructor(name, age, eyes, hair, lovesCats=false, lovesDogs){
-        this.legs=2;
-        this.arms=2;
-        this.name=name;
-        this.age=age;
-        this.eyes= eyes;
-        this.hair= hair;
-        this.lovesCats=lovesCats;
-        this.lovesDogs=lovesDogs;
+// class Character {
+//     //constructor
+//     constructor(name, age, eyes, hair, lovesCats=false, lovesDogs){
+//         this.legs=2;
+//         this.arms=2;
+//         this.name=name;
+//         this.age=age;
+//         this.eyes= eyes;
+//         this.hair= hair;
+//         this.lovesCats=lovesCats;
+//         this.lovesDogs=lovesDogs || FontFaceSetLoadEvent;
+//     }
+//     //setter method
+//     setHair(hairColor) {
+//         this.hair = hairColor;
+//     }
+//     greet(otherCharacter) {
+//         console.log('hi ' + otherCharacter + '!');
+//     }
+//     classyGreeting (otherClassyCharacter) {
+//         console.log('Greetings ' + otherClassyCharacter.name + '!');
+//     }
+//     smite() {
+//         console.log('I smite thee, you vile fiend!');
+//     }
+// }
+// const p1 = new Character("Bailey", 29, "hazel", "brown", true, true);
+// const enemy = new Character("Grumpy Groober", 87, "yellow", "orange", false, false);
+// // console.log(p1.greet("Bob"));
+// // console.log(p1.smite());
+// // console.log(enemy.greet("Sauron"));
+
+// p1.setHair('red')
+// console.log(enemy.classyGreeting(p1));
+
+//Parent Classes
+
+// 
+class Car {
+    constructor(maker, serialNumber) {
+        this.serialNumber =serialNumber;
+        this.maker = maker;
     }
-    greet(otherCharacter) {
-        console.log('hi ' + otherCharacter + '!');
-    }
-    smite() {
-        console.log('I smite thee, you vile fiend!');
+    drive() {
+        console.log('Vroom Vroom');
     }
 }
-const p1 = new Character("Bailey", 29, "hazel", "brown", true, true);
-const enemy = new Character();
-console.log(p1.greet("Bob"));
-console.log(p1.smite());
-console.log(enemy.greet("Sauron"));
+//factory class
+class Factory{
+    constructor(company){
+        this.company = company
+        this.cars = []
+    }
+    generateCar() {
+    const newCar = new Car (this.company, this.cars.length);
+    this.cars.push(newCar);
+}
+findCar (index) {
+    return this.cars[index];
+}
 
-console.log(p1);
+}
+
+const tesla = new Factory('Tesla');
+tesla.generateCar();
+tesla.generateCar();
+tesla.generateCar();
+tesla.generateCar();
+console.log(tesla);
+console.log(tesla.findCar(0));
+
+console.log(tesla);
+console.log(tesla.findCar[1]);
+
+const porsche = new Factory ("Porsche")
+porsche.generateCar();
+porsche.generateCar();
+porsche.generateCar();
+porsche.generateCar();
+console.log(porsche);
+console.log(porsche.findCar(1));
+//const newCar = new Car('Mazda' 'slk980we')
+//console.log(newCar);
